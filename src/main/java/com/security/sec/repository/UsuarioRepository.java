@@ -9,5 +9,6 @@ import com.security.sec.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
-	Optional<Usuario> findByNombre(String nombre);
+	Optional<Usuario> findByUserName(String userName);
+	 Boolean existsByUserName(String userName);
 }
