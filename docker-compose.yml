@@ -1,0 +1,17 @@
+services:
+  mysqlbd:
+    image: mysql
+    container_name: mysql-prueba-tecnoinc
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: bdprueba
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./mi-script.sql:/docker-entrypoint-initdb.d/script_sql.sql
+       - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
